@@ -1,0 +1,33 @@
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+}
+
+.dropdown-item button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
