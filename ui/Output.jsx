@@ -7,68 +7,66 @@ import "../css/body.css";
 
 export const Output = ({obj})=>{
     const readMe =  `
-    # ${obj.repoName} 
+# ${obj.repoName} 
 
-    ## Introduction
+## Introduction
     
-    ${obj.introductionContent}
-    
-    ## Description
-    
-    ${obj.descriptionContent}
-    
-    ## Images
-    
-    ${obj.imageAddresses.map((image,index)=>`Output ${index+1}: \n![image ${index+1}](${image.replace(" ","%20")})`).join("\n\t")}
-    
-    ## Features
-    
-    ${
-        obj.featuresMetrics? obj.features.map((feature,index)=>`${index+1}. ${feature}`).join("\n    ") : obj.features.map((feature)=>`- ${feature}`).join("\n   ")
-    }
-    
-    ## Installation
-    
-    \`\`\`
-    ${obj.installationStep}
-    \`\`\`
-    
-    ## Usage
-    
-    ${obj.usage}
-    
-    ## Contributing Guidelines
-    
-    ${obj.contributingGuidelines}
-    
-    ## Tech Stacks
+${obj.introductionContent}
 
-    ${
-        obj.techStacks.map((tech)=>`- ${tech}`).join("\n    ")
-    }
-    
-    ${obj.techStacks}
+## Description
 
-    ${
-        obj.note !==""? `> [!NOTE]\n    > ${obj.note}` : ""
-    }
+${obj.descriptionContent}
 
-    ${
-        obj.tip !==""? `> [!TIP]\n    > ${obj.tip}` : ""
-    }
+## Images
 
-    ${
-        obj.important !==""? `> [!IMPORTANT]\n    > ${obj.important}` : ""
-    }
+${obj.imageAddresses.map((image,index)=>`Output ${index+1}: \n![image ${index+1}](${image.replace(" ","%20")})`).join("\n\t")}
 
-    ${
-        obj.warning !==""? `> [!WARNING]\n    > ${obj.warning}`: ""
-    }
+## Features
 
-    ${
-        obj.caution !==""? `> [!CAUTION]\n    > ${obj.caution}` : ""
-    }
-    
+${
+obj.featuresMetrics? obj.features.map((feature,index)=>`${index+1}. ${feature}`).join("\n") : obj.features.map((feature)=>`- ${feature}`).join("\n   ")
+}
+
+## Installation
+
+\`\`\`
+${obj.installationStep}
+\`\`\`
+
+## Usage
+
+${obj.usage}
+
+## Contributing Guidelines
+
+${obj.contributingGuidelines}
+
+## Tech Stacks
+
+${
+obj.techStacks.map((tech)=>`- ${tech}`).join("\n    ")
+}
+
+${
+obj.note !==""? `> [!NOTE]\n> ${obj.note}` : ""
+}
+
+${
+obj.tip !==""? `> [!TIP]\n> ${obj.tip}` : ""
+}
+
+${
+obj.important !==""? `> [!IMPORTANT]\n> ${obj.important}` : ""
+}
+
+${
+obj.warning !==""? `> [!WARNING]\n> ${obj.warning}`: ""
+}
+
+${
+obj.caution !==""? `> [!CAUTION]\n> ${obj.caution}` : ""
+}
+
     `;
 
     
