@@ -19,7 +19,7 @@ export const Output = ({obj})=>{
     
     ## Images
     
-    ${obj.imageAddresses.map((image,index)=>`![image ${index+1}](${image})`).join("\n\t")}
+    ${obj.imageAddresses.map((image,index)=>`Output ${index+1}: \n![image ${index+1}](${image.replace(" ","%20")})`).join("\n\t")}
     
     ## Features
     
