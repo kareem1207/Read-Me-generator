@@ -52,12 +52,13 @@ If you want to contribute to this project, then fork the project and then follow
 > [!NOTE]
 > this readme is generated using this code only
 
-> [!TIP] > https://readme-generator-github.netlify.app/ it the deployed version of this code
+> [!TIP]
+> https://readme-generator-github.netlify.app/ it the deployed version of this code
 
 > [!IMPORTANT]
 > Fork Before Using
 
-> [!WARNING]![alt text](image-1.png)
+> [!WARNING]
 > Use it carefully
 
 > [!CAUTION]
