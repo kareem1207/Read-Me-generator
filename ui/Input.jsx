@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Output } from "./Output";
+import styles from "../css/Input.module.css";
 
 export const Input = () =>{
 
@@ -37,7 +38,7 @@ export const Input = () =>{
     }
 
     return <>
-    <form style={{display:"flex",flexDirection:"column",width:"50%"}} onSubmit={(e)=>handelSubmit(e)}>
+    <form className={styles["form-container"]} onSubmit={(e)=>handelSubmit(e)}>
         <label>Repository Name</label>
         <input type="text" placeholder="Repository Name" value={obj.repoName} onChange={(e)=>setObj({...obj,repoName:e.target.value})}/>
         <label>Introduction Content</label>

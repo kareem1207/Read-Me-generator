@@ -1,5 +1,6 @@
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import styles from "../css/Output.module.css";
 
 /* eslint-disable react/prop-types */
 export const Output = ({obj})=>{
@@ -50,12 +51,10 @@ export const Output = ({obj})=>{
     }
 
     return <>
-    <div style={{display:"flex",flexDirection:"column",width:"50%"}}>
-        <div className="output">
+    <div className={styles['output-container']}>
             <pre>
             {readMe}
             </pre>
-        </div>
         <button onClick={copyToClickBoard}>Click To Copy the content</button>
         <ToastContainer 
         position="top-right"
