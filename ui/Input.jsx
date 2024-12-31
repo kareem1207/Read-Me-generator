@@ -27,26 +27,19 @@ export const Input = () =>{
 
     const handelImage = (evt)=>{
         const value = evt.target.value.split(",");
-        console.log(value);
         setObj({...obj, imageAddresses: value});
     }
 
     const handelFeatures = (evt)=>{
         const value = evt.target.value;
         const features = value.includes(';') ? value.split(';') : [value];
-        console.log(value);
         setObj({...obj, features: features});
-    }
-
-    const handelSubmit = (e)=>{
-        e.preventDefault();
-        console.log(obj);
     }
 
     return <>
     <h1 className={styles["heading"]}>ReadMe generator</h1>
     <div className={styles["input-container"]}>
-    <form className={styles["form-container"]} onSubmit={(e)=>handelSubmit(e)}>
+    <div className={styles["form-container"]} >
         <label>Repository Name</label>
         <input type="text" placeholder="Repository Name" value={obj.repoName} onChange={(e)=>setObj({...obj,repoName:e.target.value})}/>
         <label>Introduction Content</label>
@@ -56,7 +49,7 @@ export const Input = () =>{
         <label>Image Addresses</label>
         <textarea  type="text" placeholder="Image Addresses (separate addresses by a comma ',') " value={obj.imageAddresses} onChange={(evt)=>handelImage(evt)}/>
         <label>Features</label>
-        <textarea type="text" placeholder="Features (separate addresses by a semi colon ';') " value={obj.features.join(';')} onChange={(e)=>handelFeatures(e)} spellCheck="false" />
+        <textarea type="text" placeholder="Features (separate features by a semi colon ';') " value={obj.features.join(';')} onChange={(e)=>handelFeatures(e)} spellCheck="false" />
         <button onClick={()=>{setPoints(!points);setObj({...obj, featuresMetrics: points});}} > Click If you want in points</button>
         <br/>
         <label>Installation Step</label>
@@ -78,8 +71,7 @@ export const Input = () =>{
         <input type="text" placeholder="Warning" value={obj.warning} onChange={(e)=>setObj({...obj,warning:e.target.value})}/>
         <label>Caution</label>
         <input type="text" placeholder="Caution" value={obj.caution} onChange={(e)=>setObj({...obj,caution:e.target.value})}/>
-        <button type="submit">Submit</button>
-    </form>
+    </div>
     </div>
     <Output obj={obj}/> 
     </>
