@@ -1,10 +1,10 @@
-import { Text } from "./ui/Text"
+import { Input } from "./ui/Input"
 
 
 function App() {
 
   return (
-    <Text />
+    <Input />
   )
 }
 
