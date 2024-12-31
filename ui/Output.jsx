@@ -44,7 +44,7 @@ export const Output = ({obj})=>{
     ## Tech Stacks
 
     ${
-        obj.techStacks.map((tech)=>`- ${tech}`).join("\n   ")
+        obj.techStacks.map((tech)=>`- ${tech}`).join("\n\t")
     }
     
     ${obj.techStacks}

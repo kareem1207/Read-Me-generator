@@ -65,7 +65,7 @@ export const Input = () =>{
         <label>Contributing Guidelines</label>
         <textarea type="text" placeholder="Contributing Guidelines" value={obj.contributingGuidelines} onChange={(e)=>setObj({...obj,contributingGuidelines:e.target.value})}/>
         <label>Tech Stacks</label>
-        <textarea type="text" placeholder="Tech Stacks" value={obj.techStacks.join('|')} onChange={(e)=>handelTechStacks(e)}/>
+        <textarea type="text" placeholder="Tech Stacks(separate features by a '|')" value={obj.techStacks.join('|')} onChange={(e)=>handelTechStacks(e)}/>
         <h3>Admonitions (only one lines) :</h3>
         <label>Note</label>
         <input type="text" placeholder="Note" value={obj.note} onChange={(e)=>setObj({...obj,note:e.target.value})}/>
