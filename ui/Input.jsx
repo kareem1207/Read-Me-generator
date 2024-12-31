@@ -18,6 +18,11 @@ export const Input = () =>{
         usage:"",
         contributingGuidelines:"",
         techStacks:"",
+        note:"",
+        tip:"",
+        important:"",
+        warning:"",
+        caution:"",
     })
 
     const handelImage = (evt)=>{
@@ -40,6 +45,7 @@ export const Input = () =>{
 
     return <>
     <h1 className={styles["heading"]}>ReadMe generator</h1>
+    <div className={styles["input-container"]}>
     <form className={styles["form-container"]} onSubmit={(e)=>handelSubmit(e)}>
         <label>Repository Name</label>
         <input type="text" placeholder="Repository Name" value={obj.repoName} onChange={(e)=>setObj({...obj,repoName:e.target.value})}/>
@@ -61,8 +67,20 @@ export const Input = () =>{
         <textarea type="text" placeholder="Contributing Guidelines" value={obj.contributingGuidelines} onChange={(e)=>setObj({...obj,contributingGuidelines:e.target.value})}/>
         <label>Tech Stacks</label>
         <textarea type="text" placeholder="Tech Stacks" value={obj.techStacks} onChange={(e)=>setObj({...obj,techStacks:e.target.value})}/>
+        <h3>Admonitions (only one lines) :</h3>
+        <label>Note</label>
+        <input type="text" placeholder="Note" value={obj.note} onChange={(e)=>setObj({...obj,note:e.target.value})}/>
+        <label>Tip</label>
+        <input type="text" placeholder="Tip" value={obj.tip} onChange={(e)=>setObj({...obj,tip:e.target.value})}/>
+        <label>Important</label>
+        <input type="text" placeholder="Important" value={obj.important} onChange={(e)=>setObj({...obj,important:e.target.value})}/>
+        <label>Warning</label>
+        <input type="text" placeholder="Warning" value={obj.warning} onChange={(e)=>setObj({...obj,warning:e.target.value})}/>
+        <label>Caution</label>
+        <input type="text" placeholder="Caution" value={obj.caution} onChange={(e)=>setObj({...obj,caution:e.target.value})}/>
         <button type="submit">Submit</button>
     </form>
+    </div>
     <Output obj={obj}/> 
     </>
 

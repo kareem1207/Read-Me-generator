@@ -1,4 +1,4 @@
-.heading{
+.heading {
     font-size: 2.5em;
     font-weight: bold;
     color: #333;
@@ -9,7 +9,27 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    width: fit-content;
 }
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #f9f9f9;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+    .input-container:hover {
+        transform: scale(1.05);
+    }
 .form-container
 {
     display:"flex";

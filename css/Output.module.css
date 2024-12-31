@@ -9,18 +9,24 @@
     background: linear-gradient(90deg, rgba(255,0,150,1) 0%, rgba(0,204,255,1) 100%);
     -webkit-background-clip: text;
     color: transparent;
-    animation: glow 1.5s infinite alternate;
-
-    @keyframes glow {
-        from {
-            text-shadow: 0 0 10px rgba(255,0,150,0.7), 0 0 20px rgba(255,0,150,0.7), 0 0 30px rgba(255,0,150,0.7), 0 0 40px rgba(255,0,150,0.7);
-        }
-        to {
-            text-shadow: 0 0 20px rgba(0,204,255,0.7), 0 0 30px rgba(0,204,255,0.7), 0 0 40px rgba(0,204,255,0.7), 0 0 50px rgba(0,204,255,0.7);
-        }
-    }
 }
+
 .output-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 20px;
+    perspective: 1000px;
+}
+.output {
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -33,11 +39,11 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.output-container:hover {
+.output:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-.output-container button {
+.output button {
     padding: 10px 20px;
     margin: 10px 0;
     border: none;
