@@ -68,9 +68,23 @@ export const Output = ({obj})=>{
     `;
 
     
-    const copyToClickBoard = ()=>{
-        navigator.clipboard.writeText(readMe);
-        toast("Copied to clipboard");
+    const copyToClickBoard = async () => {
+        try {
+            await navigator.clipboard.writeText(readMe);
+            toast.success('Successfully copied! 🎉', {
+                position: "bottom-right",
+                autoClose: 2000,
+                icon: "🚀",
+                style: {
+                    background: '#4CAF50',
+                    color: 'white',
+                    borderRadius: '10px',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+                }
+            });
+        } catch (err) {
+            toast.error('Failed to copy! 😢\nFollowing Error occurred : '+err);
+        }
     }
 
     return <>
@@ -82,16 +96,7 @@ export const Output = ({obj})=>{
             </pre>
         <button onClick={copyToClickBoard}>Click To Copy the content</button>
         </div>
-        <ToastContainer 
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover  />
+        <ToastContainer />
     </div>
     </>
 }
