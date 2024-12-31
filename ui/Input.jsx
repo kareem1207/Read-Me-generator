@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Output } from "./Output";
 import styles from "../css/Input.module.css";
+import "../css/body.css";
 
 export const Input = () =>{
 
@@ -38,6 +39,7 @@ export const Input = () =>{
     }
 
     return <>
+    <h1 className={styles["heading"]}>ReadMe generator</h1>
     <form className={styles["form-container"]} onSubmit={(e)=>handelSubmit(e)}>
         <label>Repository Name</label>
         <input type="text" placeholder="Repository Name" value={obj.repoName} onChange={(e)=>setObj({...obj,repoName:e.target.value})}/>
@@ -50,6 +52,7 @@ export const Input = () =>{
         <label>Features</label>
         <textarea type="text" placeholder="Features (separate addresses by a semi colon ';') " value={obj.features.join(';')} onChange={(e)=>handelFeatures(e)} spellCheck="false" />
         <button onClick={()=>setPoints(!points)} > Click If you want in points</button>
+        <br/>
         <label>Installation Step</label>
         <textarea type="text" placeholder="Installation Step" value={obj.installationStep} onChange={(e)=>setObj({...obj,installationStep:e.target.value})}/>
         <label>Usage</label>

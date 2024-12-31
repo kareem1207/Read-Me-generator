@@ -1,6 +1,7 @@
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import styles from "../css/Output.module.css";
+import "../css/body.css";
 
 /* eslint-disable react/prop-types */
 export const Output = ({obj})=>{
@@ -51,6 +52,7 @@ export const Output = ({obj})=>{
     }
 
     return <>
+    <h1 className={styles["heading"]}>Output</h1>
     <div className={styles['output-container']}>
             <pre>
             {readMe}
