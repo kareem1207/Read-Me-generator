@@ -17,7 +17,7 @@ export const Input = () =>{
         installationStep:"",
         usage:"",
         contributingGuidelines:"",
-        techStacks:"",
+        techStacks:[],
         note:"",
         tip:"",
         important:"",
@@ -34,6 +34,12 @@ export const Input = () =>{
         const value = evt.target.value;
         const features = value.includes(';') ? value.split(';') : [value];
         setObj({...obj, features: features});
+    }
+
+    const handelTechStacks = (evt)=>{
+        const value = evt.target.value;
+        const techStacks = value.includes('|') ? value.split('|') : [value];
+        setObj({...obj, techStacks: techStacks});
     }
 
     return <>
@@ -59,7 +65,7 @@ export const Input = () =>{
         <label>Contributing Guidelines</label>
         <textarea type="text" placeholder="Contributing Guidelines" value={obj.contributingGuidelines} onChange={(e)=>setObj({...obj,contributingGuidelines:e.target.value})}/>
         <label>Tech Stacks</label>
-        <textarea type="text" placeholder="Tech Stacks" value={obj.techStacks} onChange={(e)=>setObj({...obj,techStacks:e.target.value})}/>
+        <textarea type="text" placeholder="Tech Stacks" value={obj.techStacks.join('|')} onChange={(e)=>handelTechStacks(e)}/>
         <h3>Admonitions (only one lines) :</h3>
         <label>Note</label>
         <input type="text" placeholder="Note" value={obj.note} onChange={(e)=>setObj({...obj,note:e.target.value})}/>

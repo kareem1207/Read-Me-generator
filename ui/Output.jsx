@@ -42,6 +42,10 @@ export const Output = ({obj})=>{
     ${obj.contributingGuidelines}
     
     ## Tech Stacks
+
+    ${
+        obj.techStacks.map((tech)=>`- ${tech}`).join("\n   ")
+    }
     
     ${obj.techStacks}
 
