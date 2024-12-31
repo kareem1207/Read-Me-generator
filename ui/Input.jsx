@@ -57,7 +57,7 @@ export const Input = () =>{
         <textarea  type="text" placeholder="Image Addresses (separate addresses by a comma ',') " value={obj.imageAddresses} onChange={(evt)=>handelImage(evt)}/>
         <label>Features</label>
         <textarea type="text" placeholder="Features (separate addresses by a semi colon ';') " value={obj.features.join(';')} onChange={(e)=>handelFeatures(e)} spellCheck="false" />
-        <button onClick={()=>setPoints(!points)} > Click If you want in points</button>
+        <button onClick={()=>{setPoints(!points);setObj({...obj, featuresMetrics: points});}} > Click If you want in points</button>
         <br/>
         <label>Installation Step</label>
         <textarea type="text" placeholder="Installation Step" value={obj.installationStep} onChange={(e)=>setObj({...obj,installationStep:e.target.value})}/>

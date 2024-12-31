@@ -24,7 +24,7 @@ export const Output = ({obj})=>{
     ## Features
     
     ${
-        obj.points? obj.features.map((feature,index)=>`${index+1}. ${feature}`).join("\n") : obj.features.map((feature)=>`- ${feature}`).join("\n")
+        obj.featuresMetrics? obj.features.map((feature,index)=>`${index+1}. ${feature}`).join("\n    ") : obj.features.map((feature)=>`- ${feature}`).join("\n   ")
     }
     
     ## Installation
