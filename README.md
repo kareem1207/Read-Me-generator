@@ -34,8 +34,8 @@ git clone https://github.com/kareem1207/Read-Me-generator.git
 npm create vite@latest Read-me-generator
 cd Read-me-generator
 
-replace vite src with cloned src files
 ```
+replace vite src with cloned src files
 
 ## Usage
 
